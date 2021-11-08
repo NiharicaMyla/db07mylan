@@ -3,6 +3,51 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var flowers = require("./models/flowers");
+
+// We can seed the collection if needed on
+//server start
+//server start
+async function recreateDB() {
+  // Delete everything
+  await flowers.deleteMany();
+  let instance1 = new flowers({
+    flowers_type: "regular",
+    duration: 4,
+    cost: 24,
+  });
+  let instance2 = new flowers({
+    flowers_type: "hotel",
+    duration: 5,
+    cost: 25,
+  });
+  let instance3 = new flowers({
+    flowers_type: "motel",
+    duration: 6,
+    cost: 26,
+  });
+  instance1.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("First object saved");
+  });
+  instance2.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("Second object saved");
+  });
+  instance3.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("Third object saved");
+  });
+}
+
+let reseed = true;
+if (reseed) {
+  recreateDB();
+}
+
+const connectionString = process.env.MONGO_CON
+mongoose = require('mongoose');
+mongoose.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true});
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
