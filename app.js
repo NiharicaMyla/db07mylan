@@ -12,19 +12,19 @@ async function recreateDB() {
   // Delete everything
   await flowers.deleteMany();
   let instance1 = new flowers({
-    flowers_type: "regular",
-    duration: 4,
-    cost: 24,
+    flowers_type: "Peony",
+    Color: "White",
+    Cost: 12,
   });
   let instance2 = new flowers({
-    flowers_type: "hotel",
-    duration: 5,
-    cost: 25,
+    flowers_type: "Zinnias",
+    Color: "Red",
+    Cost: 10,
   });
   let instance3 = new flowers({
-    flowers_type: "motel",
-    duration: 6,
-    cost: 26,
+    flowers_type: "Dahlias",
+    Color: "Green",
+    Cost: 25,
   });
   instance1.save(function (err, doc) {
     if (err) return console.error(err);
@@ -47,7 +47,9 @@ if (reseed) {
 
 const connectionString = process.env.MONGO_CON
 mongoose = require('mongoose');
-mongoose.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(connectionString, {
+  useNewUrlParser: true, useUnifiedTopology: true,
+});
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

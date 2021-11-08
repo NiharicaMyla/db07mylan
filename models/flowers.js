@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
-const costumeSchema = mongoose.Schema({
-costume_type: String,
-size: String,
-cost: Number
-})
-module.exports = mongoose.model("flowers", flowersSchema)
+const flowersSchema = mongoose.Schema({
+Flower_type: String,
+Color: String,
+Cost: Number,
+});
+module.exports = mongoose.model("flowers", flowersSchema);
