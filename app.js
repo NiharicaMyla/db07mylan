@@ -45,10 +45,11 @@ if (reseed) {
   recreateDB();
 }
 
-const connectionString = process.env.MONGO_CON
+const connectionString = process.env.MONGO_CON;
 mongoose = require('mongoose');
 mongoose.connect(connectionString, {
-  useNewUrlParser: true, useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 var indexRouter = require('./routes/index');
