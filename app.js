@@ -5,13 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var flowers = require("./models/flowers");
 
-const connectionString = process.env.MONGO_CON;
-mongoose = require('mongoose');
-mongoose.connect(connectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
 // We can seed the collection if needed on
 //server start
 async function recreateDB() {
@@ -50,6 +43,13 @@ let reseed = true;
 if (reseed) {
   recreateDB();
 }
+
+const connectionString = process.env.MONGO_CON;
+mongoose = require('mongoose');
+mongoose.connect(connectionString, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

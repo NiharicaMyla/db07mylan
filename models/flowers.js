@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 const flowersSchema = mongoose.Schema({
 Flower_type: String,
 Color: String,
