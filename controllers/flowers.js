@@ -13,7 +13,7 @@ exports.flowers_detail = function (req, res) {
 // Handle flowers create on POST.
 exports.flowers_create_post = async function (req, res) {
     console.log(req.body);
-    let document = new restaurant();
+    let document = new flowers();
     // We are looking for a body, since POST does not have query parameters.
     // Even though bodies can be in many different formats, we will be picky
     // and require that it be a json object
