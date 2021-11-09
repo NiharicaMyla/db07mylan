@@ -3,37 +3,37 @@ var router = express.Router();
 
 // Require controller modules.
 var api_controller = require("../controllers/api");
-var restaurant_controller = require("../controllers/restaurant");
+var flowers_controller = require("../controllers/flowers");
 
 /// API ROUTE ///
 
 // GET resources base.
 router.get("/resource", api_controller.api);
 
-/// restaurant ROUTES ///
+/// flowers ROUTES ///
 
-// POST request for creating a restaurant.
+// POST request for creating a flowers.
 router.post(
-  "/resource/restaurant",
-  restaurant_controller.restaurant_create_post
+  "/resource/flowers",
+  flowers_controller.flowers_create_post
 );
 
-// DELETE request to delete restaurant.
+// DELETE request to delete flowers.
 router.delete(
-  "/resource/restaurant/:id",
-  restaurant_controller.restaurant_delete
+  "/resource/flowers/:id",
+  flowers_controller.flowers_delete
 );
 
-// PUT request to update restaurant.
+// PUT request to update flowers.
 router.put(
-  "/resource/restaurant/:id",
-  restaurant_controller.restaurant_update_put
+  "/resource/flowers/:id",
+  flowers_controller.flowers_update_put
 );
 
-// GET request for one restaurant.
-router.get("/resource/restaurant/:id", restaurant_controller.restaurant_detail);
+// GET request for one flowers.
+router.get("/resource/flowers/:id", flowers_controller.flowers_detail);
 
-// GET request for list of all restaurant items.
-router.get("/resource/restaurant", restaurant_controller.restaurant_list);
+// GET request for list of all flowers items.
+router.get("/resource/flowers", flowers_controller.flowers_list);
 
 module.exports = router;
