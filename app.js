@@ -56,6 +56,7 @@ var usersRouter = require('./routes/users');
 var flowersRouter = require('./routes/flowers');
 var addmodsRouter = require('./routes/addmods');
 var selectorRouter = require('./routes/selector');
+var resourceRouter = require("./routes/resource");
 
 var app = express();
 
@@ -74,7 +75,7 @@ app.use('/users', usersRouter);
 app.use('/flowers', flowersRouter);
 app.use('/addmods', addmodsRouter);
 app.use('/selector', selectorRouter);
-
+app.use("/", resourceRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
