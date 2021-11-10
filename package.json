@@ -22,10 +22,10 @@
   "description": "[Link](https://fwb07nmyla.herokuapp.com/)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NiharicaMyla/db07mylan.git"
+    "url": "git+https://github.com/NiharicaMyla/fwb07nmyla.git"
   },
   "bugs": {
-    "url": "https://github.com//NiharicaMyla/db07mylan/issues"
+    "url": "https://github.com//NiharicaMyla/fwb07nmyla/issues"
   },
-  "homepage": "https://github.com/NiharicaMyla/db07mylan#readme"
+  "homepage": "https://github.com/NiharicaMyla/fwb07nmyla#readme"
 }
