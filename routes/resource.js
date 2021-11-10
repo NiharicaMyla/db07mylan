@@ -15,20 +15,17 @@ router.get("/resource", api_controller.api);
 // POST request for creating a flowers.
 router.post(
   "/resource/flowers",
-  flowers_controller.flowers_create_post
-);
+  flowers_controller.flowers_create_post);
 
 // DELETE request to delete flowers.
 router.delete(
   "/resource/flowers/:id",
-  flowers_controller.flowers_delete
-);
+  flowers_controller.flowers_delete);
 
 // PUT request to update flowers.
 router.put(
   "/resource/flowers/:id",
-  flowers_controller.flowers_update_put
-);
+  flowers_controller.flowers_update_put);
 
 // GET request for one flowers.
 router.get("/resource/flowers/:id", flowers_controller.flowers_detail);
