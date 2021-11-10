@@ -15,23 +15,23 @@ async function recreateDB() {
     color: "White",
     cost: 12,
   });
+  instance1.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("First object saved");
+  });
   let instance2 = new flowers({
     flowers_type: "Zinnias",
     color: "Red",
     cost: 10,
   });
+  instance2.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("Second object saved");
+  });
   let instance3 = new flowers({
     flowers_type: "Dahlias",
     color: "Green",
     cost: 25,
-  });
-  instance1.save(function (err, doc) {
-    if (err) return console.error(err);
-    console.log("First object saved");
-  });
-  instance2.save(function (err, doc) {
-    if (err) return console.error(err);
-    console.log("Second object saved");
   });
   instance3.save(function (err, doc) {
     if (err) return console.error(err);
@@ -40,9 +40,7 @@ async function recreateDB() {
 }
 
 let reseed = true;
-if (reseed) {
-  recreateDB();
-}
+if (reseed) { recreateDB(); }
 
 const connectionString = process.env.MONGO_CON;
 mongoose = require('mongoose');
