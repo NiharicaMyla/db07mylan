@@ -2,16 +2,16 @@ extends layout
 
 block content
   h1= title
-  //- const restaurant = ['Room_type','Duration','Cost']
+  //- const flowers = ['flower_type','color','Cost']
+  //- - let items = [] 
   - let items = results; 
   //- - let results;
-  - let a;
+  - let p;
   script.
-    function buy(x){
-      alert('Purchased Item: ' + x)
+    function buy(f){
+      alert('Purchased Item: ' + f)
    } 
   div(class='container-fluid')
     div(class='row')
-      each a, index in items 
-        div(class='col-sm-3' onclick='buy('+index+')') #{a} 
-      
+      each p, index in items 
+        div(class='col-sm-4' onclick='buy('+index+')') #{p}
