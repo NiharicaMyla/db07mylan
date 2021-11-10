@@ -6,7 +6,7 @@ exports.flowers_detail = function (req, res) {
 };
 // Handle flowers create on POST.
 exports.flowers_create_post = async function (req, res) {
-  console.log(req.body);
+  console.log(req.body)
   let document = new flowers();
   // We are looking for a body, since POST does not have query parameters.
   // Even though bodies can be in many different formats, we will be picky
@@ -18,7 +18,8 @@ exports.flowers_create_post = async function (req, res) {
   try {
     let result = await document.save();
     res.send(result);
-  } catch (err) {
+  }
+  catch (err) {
     res.status(500);
     res.send(`{"error": ${err}}`);
   }
@@ -34,7 +35,7 @@ exports.flowers_update_put = function (req, res) {
   res.send("NOT IMPLEMENTED: flowers update PUT" + req.params.id);
 };
 
-// List of all flowerss
+// List of all flowers
 exports.flowers_list = async function (req, res) {
   try {
     theflowers = await flowers.find();
