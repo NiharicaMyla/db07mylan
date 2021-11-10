@@ -8,7 +8,7 @@ var flowers_controller = require("../controllers/flowers");
 /// API ROUTE ///
 
 // GET resources base.
-router.get("/resource", api_controller.api);
+router.get("/", api_controller.api);
 
 /// flowers ROUTES ///
 
@@ -28,9 +28,9 @@ router.put(
   flowers_controller.flowers_update_put);
 
 // GET request for one flowers.
-router.get("/resource/flowers/:id", flowers_controller.flowers_detail);
+router.get("/flowers/:id", flowers_controller.flowers_detail);
 
 // GET request for list of all flowers items.
-router.get("/resource/flowers", flowers_controller.flowers_list);
+router.get("/flowers", flowers_controller.flowers_list);
 
 module.exports = router;
