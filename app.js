@@ -12,18 +12,18 @@ async function recreateDB() {
   await flowers.deleteMany();
   let instance1 = new flowers({
     flowers_type: "Peony",
-    Color: "White",
-    Cost: 12,
+    color: "White",
+    cost: 12,
   });
   let instance2 = new flowers({
     flowers_type: "Zinnias",
-    Color: "Red",
-    Cost: 10,
+    color: "Red",
+    cost: 10,
   });
   let instance3 = new flowers({
     flowers_type: "Dahlias",
-    Color: "Green",
-    Cost: 25,
+    color: "Green",
+    cost: 25,
   });
   instance1.save(function (err, doc) {
     if (err) return console.error(err);
@@ -76,6 +76,7 @@ app.use('/flowers', flowersRouter);
 app.use('/addmods', addmodsRouter);
 app.use('/selector', selectorRouter);
 app.use("/", resourceRouter);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
