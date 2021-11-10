@@ -1,4 +1,5 @@
 var createError = require('http-errors');
+var mongoose=require('mongoose');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -10,29 +11,22 @@ var flowers = require("./models/flowers");
 async function recreateDB() {
   // Delete everything
   await flowers.deleteMany();
-  let instance1 = new flowers({
-    flowers_type: "Peony",
-    color: "White",
-    cost: 12,
-  });
+  let instance1 = new flowers({ flowers_type: "Peony",
+    color: "White", cost: 12});
   instance1.save(function (err, doc) {
     if (err) return console.error(err);
     console.log("First object saved");
   });
   let instance2 = new flowers({
-    flowers_type: "Zinnias",
-    color: "Red",
-    cost: 10,
-  });
+    flowers_type: "Zinnias", color: "Red",
+    cost: 10});
   instance2.save(function (err, doc) {
     if (err) return console.error(err);
     console.log("Second object saved");
   });
   let instance3 = new flowers({
-    flowers_type: "Dahlias",
-    color: "Green",
-    cost: 25,
-  });
+    flowers_type: "Dahlias", color: "Green",
+    cost: 25});
   instance3.save(function (err, doc) {
     if (err) return console.error(err);
     console.log("Third object saved");
@@ -42,12 +36,22 @@ async function recreateDB() {
 let reseed = true;
 if (reseed) { recreateDB(); }
 
-const connectionString = process.env.MONGO_CON;
+const connectionString =process.env.MONGO_CON;
 mongoose = require('mongoose');
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+var db= mongoose.connection;
+
+//Bind connection to error event
+db.on('error', console.error.bind(console, `MongoDB connection
+error:`));
+db.once("open", function(){
+
+
+console.log("Connection to DB succeeded")});
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

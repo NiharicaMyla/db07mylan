@@ -2,14 +2,14 @@ extends layout
 
 block content
   h1= title
-  - const flowers = ['Flower_type','Color','Cost']
+ // - const flowers = ['Flower_type','Color','Cost']
   - let items = results; 
-  - let e;
+   - let o;
   script.
     function buy(f){
       alert('Purchased Item: ' + f)
    } 
   div(class='container-fluid')
     div(class='row')
-      each e, index in flowers
-        div(class='col-sm-2' onclick='buy('+index+')') #{e} #{results}
+      each o, index in items
+        div(class='col-sm-2' onclick='buy('+index+')') #{o}

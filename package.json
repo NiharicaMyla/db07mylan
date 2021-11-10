@@ -19,4 +19,13 @@
   "main": "app.js",
   "author": "niharica myla",
   "license": "ISC"
+  "description": "[Link](https://fwb07nmyla.herokuapp.com/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiharicaMyla/fwb07nmyla.git"
+  },
+  "bugs": {
+    "url": "https://github.com//NiharicaMyla/fwb07nmyla/issues"
+  },
+  "homepage": "https://github.com/NiharicaMyla/fwb07nmyla#readme"
 }
