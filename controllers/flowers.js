@@ -34,12 +34,7 @@ exports.flowers_delete = function (req, res) {
 exports.flowers_update_put = function (req, res) {
   res.send("NOT IMPLEMENTED: flowers update PUT" + req.params.id);
 };
-<<<<<<< HEAD
-// List of all flowerss
-=======
 
-// List of all flowers
->>>>>>> 3189f64c19332a73ec1e3d0171611f72a37ce35b
 exports.flowers_list = async function (req, res) {
   try {
     theflowers = await flowers.find();
