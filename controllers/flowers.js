@@ -33,7 +33,6 @@ exports.flowers_delete = function (req, res) {
 exports.flowers_update_put = function (req, res) {
   res.send("NOT IMPLEMENTED: flowers update PUT" + req.params.id);
 };
-
 // List of all flowerss
 exports.flowers_list = async function (req, res) {
   try {
