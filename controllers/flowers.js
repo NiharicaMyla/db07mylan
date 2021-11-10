@@ -11,9 +11,9 @@ exports.flowers_create_post = async function (req, res) {
   // We are looking for a body, since POST does not have query parameters.
   // Even though bodies can be in many different formats, we will be picky
   // and require that it be a json object
-  // {"flower_type":"lobelias", "cost":35, "color":"blue"}
+  // {"flower_type":"lobelias, "color":"blue", "cost":35}
   document.flower_type = req.body.flower_type;
-  document.duration = req.body.duration;
+  document.color = req.body.color;
   document.cost = req.body.cost;
   try {
     let result = await document.save();
@@ -41,6 +41,21 @@ exports.flowers_list = async function (req, res) {
     res.send(theflowers);
   } 
   catch (err) {
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+  }
+};
+
+// VIEWS
+// Handle a show all view
+exports.flowers_view_all_Page = async function (req, res) {
+  try {
+    theflowers = await flowers.find();
+    res.render("flowers", {
+      title: "flowers Search Results",
+      results: theflowers,
+    });
+  } catch (err) {
     res.status(500);
     res.send(`{"error": ${err}}`);
   }
