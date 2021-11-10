@@ -13,24 +13,18 @@ router.get("/", api_controller.api);
 /// flowers ROUTES ///
 
 // POST request for creating a flowers.
-router.post(
-  "/resource/flowers",
-  flowers_controller.flowers_create_post);
+router.post("/flowers", flowers_controller.flowers_create_post);
 
 // DELETE request to delete flowers.
-router.delete(
-  "/resource/flowers/:id",
-  flowers_controller.flowers_delete);
+router.delete("/flowers/:id",flowers_controller.flowers_delete);
 
 // PUT request to update flowers.
-router.put(
-  "/resource/flowers/:id",
-  flowers_controller.flowers_update_put);
+router.put("/flowers/:id", flowers_controller.flowers_update_put);
 
 // GET request for one flowers.
-router.get("/flowers/:id", flowers_controller.flowers_view_all_Page);
+router.get("/flowers/:id", flowers_controller.flowers_detail);
 
 // GET request for list of all flowers items.
-router.get("/flowers", flowers_controller.flowers_list);
+router.get("/flowers", flowers_controller.flowers_view_all_Page);
 
 module.exports = router;

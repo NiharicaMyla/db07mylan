@@ -1,9 +1,22 @@
 var flowers = require("../models/flowers");
 
+// List of all flowers
+exports.flowers_list = async function(req, res) {
+   try {
+       theflowers = await flowers.find();
+       res.send(theflowers);
+    } 
+   catch (err) {
+      res.status(500);
+      res.send(`{"error": ${err}}`);
+  }
+};
+
 // for a specific flower.
 exports.flowers_detail = function (req, res) {
-  res.send("NOT IMPLEMENTED: flowers detail: " + req.params.id);
+  res.send('NOT IMPLEMENTED: flowers detail: ' + req.params.id);
 };
+
 // Handle flowers create on POST.
 exports.flowers_create_post = async function (req, res) {
   console.log(req.body)
@@ -35,27 +48,14 @@ exports.flowers_update_put = function (req, res) {
   res.send("NOT IMPLEMENTED: flowers update PUT" + req.params.id);
 };
 
-exports.flowers_list = async function (req, res) {
-  try {
-    theflowers = await flowers.find();
-    res.send(theflowers);
-  } 
-  catch (err) {
-    res.status(500);
-    res.send(`{"error": ${err}}`);
-  }
-};
-
 // VIEWS
-// Handle a show all view
+// Handle all view
 exports.flowers_view_all_Page = async function (req, res) {
   try {
     theflowers = await flowers.find();
-    res.render("flowers", {
-      title: "flowers Search Results",
-      results: theflowers,
-    });
-  } catch (err) {
+    res.render("flowers", { title: "flowers Search Results", results: theflowers });
+  } 
+  catch (err) {
     res.status(500);
     res.send(`{"error": ${err}}`);
   }
