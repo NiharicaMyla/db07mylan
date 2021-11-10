@@ -28,7 +28,7 @@ router.put(
   flowers_controller.flowers_update_put);
 
 // GET request for one flowers.
-router.get("/flowers/:id", flowers_controller.flowers_detail);
+router.get("/flowers/:id", flowers_controller.flowers_view_all_Page);
 
 // GET request for list of all flowers items.
 router.get("/flowers", flowers_controller.flowers_list);
