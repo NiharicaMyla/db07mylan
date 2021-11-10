@@ -50,18 +50,3 @@ exports.flowers_list = async function (req, res) {
     res.send(`{"error": ${err}}`);
   }
 };
-
-// VIEWS
-// Handle a show all view
-exports.flowers_view_all_Page = async function (req, res) {
-  try {
-    theflowers = await flowers.find();
-    res.render("flowers", {
-      title: "flowers Search Results",
-      results: theflowers,
-    });
-  } catch (err) {
-    res.status(500);
-    res.send(`{"error": ${err}}`);
-  }
-};
