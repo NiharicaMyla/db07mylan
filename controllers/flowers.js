@@ -44,7 +44,8 @@ exports.flowers_list = async function (req, res) {
   try {
     theflowers = await flowers.find();
     res.send(theflowers);
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(500);
     res.send(`{"error": ${err}}`);
   }
