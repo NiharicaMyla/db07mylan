@@ -25,7 +25,7 @@ exports.flowers_create_post = async function (req, res) {
   // Even though bodies can be in many different formats, we will be picky
   // and require that it be a json object
   // {"flower_type":"lobelias, "color":"blue", "cost":35}
-  document.flower_type = req.body.flower_type;
+  document.flowers_type = req.body.flowers_type;
   document.color = req.body.color;
   document.cost = req.body.cost;
   try {
