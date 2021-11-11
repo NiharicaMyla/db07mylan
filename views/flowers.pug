@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1= title
-  - let image_names = results
+  - let flower = results
     table
         thead
             tr 
@@ -10,9 +10,9 @@ block content
                 th(scope="col") color 
                 th(scope="col") cost
         tbody        
-            - for(let i=0;i<image_names.length;i++){
+            - for(let i=0;i<flower.length;i++){
                 tr
-                    td  #{image_names[i].flowers_type}
-                    td  #{image_names[i].color}
-                    td  #{image_names[i].cost}
+                    td  #{flower[i].flowers_type}
+                    td  #{flower[i].color}
+                    td  #{flower[i].cost}
             - }
