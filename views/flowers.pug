@@ -2,16 +2,17 @@ extends layout
 
 block content
   h1= title
-  //- const flowers = ['flower_type','color','Cost']
-  //- - let items = [] 
-  - let items = results; 
-  //- - let results;
-  - let p;
-  script.
-    function buy(f){
-      alert('Purchased Item: ' + f)
-   } 
-  div(class='container-fluid')
-    div(class='row')
-      each p, index in items 
-        div(class='col-sm-4' onclick='buy('+index+')') #{p}
+  - let image_names = results
+    table
+        thead
+            tr 
+                th(scope="col") flowers_type 
+                th(scope="col") color 
+                th(scope="col") cost
+        tbody        
+            - for(let i=0;i<image_names.length;i++){
+                tr
+                    td  #{image_names[i].flowers_type}
+                    td  #{image_names[i].color}
+                    td  #{image_names[i].cost}
+            - }
