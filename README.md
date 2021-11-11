@@ -7,9 +7,9 @@ Creating a readme file in repo.
 
 Class Flowers
 
-Flowers_type(string) Color(string) Cost(number)
+flowers_type(string) Color(string) Cost(number)
 
-<a href="https://db07mylan.herokuapp.com/flowers">Click here for flowers page</a>
+<a href="https://db07mylan.herokuapp.com/resource">Click here for resource page</a>
 
 <a href="https://db07mylan.herokuapp.com/addmods?rows=3&cols=4">Click here for the addmods page</a>
 
