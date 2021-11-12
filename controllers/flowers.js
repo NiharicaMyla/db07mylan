@@ -49,8 +49,29 @@ exports.flowers_delete = function (req, res) {
 };
 
 // Handle flowers update form on PUT.
-exports.flowers_update_put = function (req, res) {
-  res.send("NOT IMPLEMENTED: flowers update PUT" + req.params.id);
+// exports.flowers_update_put = function (req, res) {
+//  res.send("NOT IMPLEMENTED: flowers update PUT" + req.params.id);
+// };
+
+//Handle flowers update form on PUT.
+exports.flowers_update_put = async function (req, res) {
+  console.log(`update on id ${req.params.id} with body 
+${JSON.stringify(req.body)}`);
+  try {
+    let toUpdate = await flowers.findById(req.params.id);
+    // Do updates of properties
+    if (req.body.flowers_type)
+      toUpdate.flowers_type = req.body.flowers_type;
+    if (req.body.color) toUpdate.color = req.body.color;
+    if (req.body.cost) toUpdate.cost = req.body.cost;
+    let result = await toUpdate.save();
+    console.log("Sucess " + result);
+    res.send(result);
+  } catch (err) {
+    res.status(500);
+    res.send(`{"error": ${err}: Update for id ${req.params.id} 
+failed`);
+  }
 };
 
 // VIEWS
