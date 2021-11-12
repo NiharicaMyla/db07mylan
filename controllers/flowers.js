@@ -2,19 +2,24 @@ var flowers = require("../models/flowers");
 
 // List of all flowers
 exports.flowers_list = async function(req, res) {
-   try {
-       theflowers = await flowers.find();
-       res.send(theflowers);
-    } 
-   catch (err) {
-      res.status(500);
-      res.send(`{"error": ${err}}`);
-  }
+  res.send("NOT IMPLEMENTED: restaurant list");
 };
+ 
+// // for a specific flower.
+// exports.restaurant_detail = function (req, res) {
+//   res.send("NOT IMPLEMENTED: flower detail: " + req.params.id);
+// };
 
-// for a specific flower.
-exports.flowers_detail = function (req, res) {
-  res.send('NOT IMPLEMENTED: flowers detail: ' + req.params.id);
+exports.flowers_detail = async function (req, res) {
+  console.log("detail" + req.params.id);
+  try {
+    result = await flowers.findById(req.params.id);
+    console.log(result);
+    res.send(result);
+  } catch (error) {
+    res.status(500);
+    res.send(`{"error": document for id ${req.params.id} not found`);
+  }
 };
 
 // Handle flowers create on POST.
