@@ -2,7 +2,7 @@ var flowers = require("../models/flowers");
 
 // List of all flowers
 exports.flowers_list = async function(req, res) {
-  res.send("NOT IMPLEMENTED: restaurant list");
+  res.send("NOT IMPLEMENTED: flowers list");
 };
  
 // // for a specific flower.
