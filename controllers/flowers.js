@@ -6,18 +6,18 @@ exports.flowers_list = async function(req, res) {
 };
  
 // // for a specific flower.
-// exports.restaurant_detail = function (req, res) {
+// exports.flowers_detail = function (req, res) {
 //   res.send("NOT IMPLEMENTED: flower detail: " + req.params.id);
 // };
 
 exports.flowers_detail = async function (req, res) {
   console.log("detail" + req.params.id);
   try {
-    result = await flowers.findById(req.params.id);
-    console.log(result);
-    res.send(result);
+    result = await flowers.findById(req.params.id)
+    console.log(result)
+    res.send(result)
   } catch (error) {
-    res.status(500);
+    res.status(500)
     res.send(`{"error": document for id ${req.params.id} not found`);
   }
 };
