@@ -43,11 +43,11 @@ exports.flowers_create_post = async function (req, res) {
   }
 };
 
-// Handle Costume delete on DELETE.
-exports.costume_delete = async function(req, res) {
+// Handle flowers delete on DELETE.
+exports.flowers_delete = async function(req, res) {
   console.log("delete " + req.params.id)
   try {
-  result = await Costume.findByIdAndDelete( req.params.id)
+  result = await flowers.findByIdAndDelete( req.params.id)
   console.log("Removed " + result)
   res.send(result)
   } catch (err) {
