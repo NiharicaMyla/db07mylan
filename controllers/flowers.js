@@ -134,3 +134,17 @@ exports.flowers_view_one_Page = async function(req, res) {
   res.send(`{'error': '${err}'}`);
   }
   };
+
+  // Handle building the view for updating a flowers.
+// query provides the id
+exports.flowers_update_Page = async function(req, res) {
+  console.log("update view for item "+req.query.id)
+  try{
+  let result = await flowers.findById(req.query.id)
+  res.render('flowersupdate', { title: 'flowers Update', toShow: result });
+  }
+  catch(err){
+  res.status(500)
+  res.send(`{'error': '${err}'}`);
+  }
+  };
