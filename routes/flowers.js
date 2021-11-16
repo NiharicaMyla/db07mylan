@@ -15,7 +15,7 @@ router.get("/", flowers_controlers.flowers_view_all_Page);
 router.get("/detail", flowers_controlers.flowers_view_one_Page);
 
 /* GET create costume page */
-// router.get("/create", flowers_controlers.flowers_create_Page);
+router.get("/create", flowers_controlers.flowers_create_Page);
 
 /* GET create update page */
 // router.get("/update", flowers_controlers.flowers_update_Page);
