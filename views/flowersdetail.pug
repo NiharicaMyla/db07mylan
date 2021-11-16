@@ -1,0 +1,17 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  - let flowersid = toShow._id 
+  - let flowers_type = toShow.flowers_type 
+  - let color  = toShow.color  
+  - let cost  = toShow.cost
+  div 
+    div.row 
+      div(class='costumeAttr mr-3') flowers ID is:  #{flowersid} 
+      div(class='costumeAttr mr-3') flowers Type is:   #{flowers_type} 
+      div(class='costumeAttr mr-3') Duration is:   #{color} 
+      div(class='costumeAttr mr-3') Cost is:   #{cost}
+
+      button(class="btn btn-success m-3" onclick="window.location.href='/flowers'") Cancel
