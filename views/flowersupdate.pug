@@ -22,9 +22,9 @@ block content
     div.form-group 
         label.flowersAttr(for='cost') flowers cost 
         input#cost(type='number', name='cost', value= flowerscost ) 
-    input(type="submit") 
+    input(class="btn btn-warning m-4" type="submit") 
 
-    button(class="btn btn-success m-2" onclick="window.location.href='/flowers'") Cancel 
+    button(class="btn btn-success m-4" onclick="window.location.href='/flowers'") Cancel 
  
   script. 
     document.forms['flowersForm'].addEventListener('submit', (event) => { 

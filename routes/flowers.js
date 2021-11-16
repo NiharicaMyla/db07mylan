@@ -21,5 +21,5 @@ router.get("/create", flowers_controlers.flowers_create_Page);
 router.get("/update", flowers_controlers.flowers_update_Page);
 
 /* GET create costume page */
-// router.get("/delete", flowers_controlers.flowers_delete_Page);
+router.get("/delete", flowers_controlers.flowers_delete_Page);
 module.exports = router;
