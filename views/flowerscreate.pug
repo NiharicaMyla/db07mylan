@@ -9,13 +9,13 @@ block content
         input#flowers_type(type='text', name='flowers_type') 
     div.form-group 
         label.flowersAttr(for='size') flowers color:  
-        input#size(type='text', name='size') 
+        input#color(type="text")(type='text', name='size') 
     div.form-group 
         label.flowersAttr(for='cost') flowers cost:  
         input#cost(type='number', name='cost') 
-    input(class="btn btn-info m-2" type="submit") 
+    input(type="submit") 
 
-    button(class="btn btn-success m-2" onclick="window.location.href='/flowers'") Cancel 
+    button(onclick="window.location.href='/flowers'") Cancel 
  
   script. 
     document.forms['flowersForm'].addEventListener('submit', (event) => { 
