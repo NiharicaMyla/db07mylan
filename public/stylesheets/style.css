@@ -7,11 +7,12 @@ a {
   color: #00B7FF;
 }
 
-.costumeAttr {
+.flowersAttr {
   background-color: rgb(17, 255, 69);
   width: 120px;
   }
 
   h1 {
     color: #ff00c8;
+    font-family: italic "italic";
   }

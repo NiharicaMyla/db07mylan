@@ -11,15 +11,15 @@ var router = express.Router();
 /* GET flowers */
 router.get("/", flowers_controlers.flowers_view_all_Page);
 
-/* GET detail costume page */
+/* GET detail flowers page */
 router.get("/detail", flowers_controlers.flowers_view_one_Page);
 
-/* GET create costume page */
+/* GET create flowers page */
 router.get("/create", flowers_controlers.flowers_create_Page);
 
-/* GET create update page */
+/* GET update flowers page */
 router.get("/update", flowers_controlers.flowers_update_Page);
 
-/* GET create costume page */
+/* GET delete flowers page */
 router.get("/delete", flowers_controlers.flowers_delete_Page);
 module.exports = router;
