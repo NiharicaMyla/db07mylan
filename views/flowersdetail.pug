@@ -2,6 +2,11 @@ extends layout
  
 block content 
   h1= title 
+
+  
+  if (toShow == null) 
+    h2 No instance to View 
+  else 
  
   - let flowersid = toShow._id 
   - let flowers_type = toShow.flowers_type 
