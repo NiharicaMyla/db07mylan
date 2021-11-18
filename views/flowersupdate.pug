@@ -1,4 +1,3 @@
-
 extends layout 
  
 block content 
@@ -8,22 +7,11 @@ block content
     h2 No instance to Update     
   else
  
-    - let flowersid = toShow._id 
-    - let flowers_type = toShow.flowers_type 
-    - let flowerscolor = toShow.color
-    - let flowerscost = toShow.cost 
-    - let items = results;
-    div(class="container-fluid")
-    div(class="row m-1")
-     each item in items
-    - let destination = `dispatch(\"/flowers/update?id=${item._id}\")`
-    div(class="row-sm-2", class="m-1") Item #{item.flowers_type}(#{item.color}) is #{item.cost}
-     button.btn( class="btn-primary ml-1", onclick= destination) Update
-script.
-  function dispatch(path){
-  window.location.href=path
-}
-    
+  - let flowersid = toShow._id 
+  - let flowers_type = toShow.flowers_type 
+  - let flowerscolor = toShow.color
+  - let flowerscost = toShow.cost 
+
     div.row(class='mb-2') 
       div.mr-1 ID is 
       div #{flowersid} 
@@ -58,4 +46,4 @@ script.
           // TODO handle error 
           alert("Update failed " + error ) 
         }); 
-      });
+      });      
