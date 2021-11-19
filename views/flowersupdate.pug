@@ -7,11 +7,11 @@ block content
     h2 No instance to Update     
   else
  
-  - let flowersid = toShow._id 
-  - let flowers_type = toShow.flowers_type 
-  - let flowerscolor = toShow.color
-  - let flowerscost = toShow.cost 
-
+    - let flowersid = toShow._id 
+    - let flowers_type = toShow.flowers_type 
+    - let flowerscolor = toShow.color
+    - let flowerscost = toShow.cost 
+    
     div.row(class='mb-2') 
       div.mr-1 ID is 
       div #{flowersid} 
@@ -21,8 +21,8 @@ block content
           label.flowersAttr(for='flowers_type') flowers type 
           input#flowers_type(type='text', name='flowers_type', value= flowers_type ) 
       div.form-group 
-          label.flowersAttr(for='color') flowers color  
-          input#color(type='text', name='color', value= flowerscolor ) 
+          label.flowersAttr(for='size') flowers color  
+          input#color(type='text', name='size', value= flowerscolor ) 
       div.form-group 
           label.flowersAttr(for='cost') flowers cost 
           input#cost(type='number', name='cost', value= flowerscost ) 
@@ -46,4 +46,4 @@ block content
           // TODO handle error 
           alert("Update failed " + error ) 
         }); 
-      });      
+      }); 
