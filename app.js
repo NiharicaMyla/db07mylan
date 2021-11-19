@@ -15,7 +15,6 @@ mongoose.connect(connectionString, {
   useUnifiedTopology: true,
 });
 
-
 var db= mongoose.connection;
 
 //Bind connection to error event
