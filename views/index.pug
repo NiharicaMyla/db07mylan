@@ -1,14 +1,11 @@
 extends layout
-
 block content
-
-  h1= title
-if (!user)
-a(href="/login") Login
-br
-a(href="/register") Register
-if (user)
-p You are currently logged in as #{user.username}
-a(href="/flowers") Take me to flowers
-br
-a(href="/logout") Logout
+  if (!user)
+    a(href="/login") Login
+    br
+    a(href="/register") Register
+  if (user)
+    p You are currently logged in as #{user.username}
+    a(href="/flowers") Take me to flowers 
+    br
+    a(href="/logout") Logout
