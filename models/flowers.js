@@ -7,8 +7,8 @@ color: String,
 cost: {
     type: Number,
 
-        min:[20,"Minimum year for construction"],
-        max:[60,"Maximum year for construction"]
+        min:[20,"Minimum cost"],
+        max:[60,"Maximum cost"]
 }
 
 })
