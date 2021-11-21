@@ -5,7 +5,7 @@ const flowersSchema = mongoose.Schema({
 flowers_type: String,
 color: {
     type: String,
-    required: [true, "color name is Required"]
+    required: [true, "color is Required"]
 },
 cost: {
     type: Number,
