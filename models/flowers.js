@@ -7,10 +7,9 @@ color: String,
 cost: {
     type: Number,
 
-        min:[20,"Minimum cost"],
-        max:[60,"Maximum cost"]
+        min:[100,"Minimum year for cost"],
+        max:[2000,"Maximum year for cost"]
 }
 
 })
-
 module.exports = mongoose.model("flowers", flowersSchema);
