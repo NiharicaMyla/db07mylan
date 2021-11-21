@@ -7,8 +7,8 @@ color: String,
 cost: {
     type: Number,
 
-        min:[100,"Minimum year for cost"],
-        max:[2000,"Maximum year for cost"]
+        min:[10],
+        max:[200]
 }
 
 })
