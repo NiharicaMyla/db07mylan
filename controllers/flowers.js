@@ -5,7 +5,7 @@ exports.flowers_list = async function(req, res) {
   res.send("NOT IMPLEMENTED: flowers list");
 };
  
-// // for a specific flower.
+// for a specific flower.
 // exports.flowers_detail = function (req, res) {
 //   res.send("NOT IMPLEMENTED: flower detail: " + req.params.id);
 // };
@@ -135,7 +135,7 @@ exports.flowers_view_one_Page = async function(req, res) {
   }
   };
 
-  // Handle building the view for updating a flowers.
+  // Handle building the view for updating flowers.
 // query provides the id
 exports.flowers_update_Page = async function(req, res) {
   console.log("update view for item "+req.query.id)

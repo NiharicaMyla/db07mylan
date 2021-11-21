@@ -4,12 +4,12 @@ block content
   h1= title
   - let flower = results
   - let items = results
-  - let destinationcreate = `dispatchCreate(\"/flowers/create\")`
   div(class="container-fluid")
   button.btn( class="btn-success ml-1", onclick= destinationcreate) Create
 
    div(class="row m-1")
     each item in flower
+     - let destinationcreate = `dispatchCreate(\"/flowers/create\")`
      - let destination = `dispatch(\"/flowers/update?id=${item._id}\")`
      - let destinationdetail = `dispatch(\"/flowers/detail?id=${item._id}\")`
      - let destinationdelete = `dispatchDelete(\"/flowers/delete?id=${item._id}\")`

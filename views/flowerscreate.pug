@@ -27,10 +27,16 @@ block content
       }).then((resp) => { 
         return resp.json(); // or resp.text() or whatever the server sends 
       }).then((body) => { 
-        alert("Save succeded") 
-        // TODO handle body 
-      }).catch((error) => { 
-        // TODO handle error 
-        alert("Save failed " + error ) 
-      }); 
-    }); 
+        if(body.name){
+          document.getElementById("err").innerHTML=`${body.name}  \n ${body.message}\n`;
+          alert("Save Failed")
+        }else{
+           alert("Save succeded")
+        }
+        
+      }).catch((error) =>{
+        // TODO handle error
+        //- document.getElementById("errors").style.display="block"
+          alert("Save failed " + error)
+      });
+    });
