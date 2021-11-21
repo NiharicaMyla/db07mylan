@@ -3,7 +3,10 @@ const { SchemaTypes } = require('mongoose');
 
 const flowersSchema = mongoose.Schema({
 flowers_type: String,
-color: String,
+color: {
+    type: String,
+    required: [true, "color name is Required"]
+},
 cost: {
     type: Number,
 

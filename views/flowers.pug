@@ -4,26 +4,24 @@ block content
   h1= title
   - let flower = results
   - let items = results
+  - let destinationcreate = `dispatchCreate(\"/flowers/create\")`
   div(class="container-fluid")
+  button.btn( class="btn-success ml-1", onclick= destinationcreate) Create
+
    div(class="row m-1")
     each item in flower
      - let destination = `dispatch(\"/flowers/update?id=${item._id}\")`
-     - let destinationcreate = `dispatchCreate(\"/flowers/create\")`
-     - let destinationdetail = `dispatchDetail(\"/flowers/detail?id=${flowers._id}\")`
-     - let destinationdelete = `dispatchDelete(\"/flowers/delete?id=${flowers._id}\")`
+     - let destinationdetail = `dispatch(\"/flowers/detail?id=${item._id}\")`
+     - let destinationdelete = `dispatchDelete(\"/flowers/delete?id=${item._id}\")`
       div(class="row-sm-2", class="m-1") item #{item.flowers_type}(#{item.color}) is #{item.cost}
       button.btn( class="btn-warning ml-1", onclick= destination) Update
-      button.btn( class="btn-success ml-1", onclick= destination) Create
-      button.btn( class="btn-dark ml-1", onclick= destination) Detail
-      button.btn( class="btn-info ml-1", onclick= destination) Delete
+      button.btn( class="btn-dark ml-1", onclick= destinationdetail) Detail
+      button.btn( class="btn-info ml-1", onclick= destinationdelete) Delete
      script.
         function dispatch(path){
         window.location.href=path
         }
         function dispatchCreate(path){
-        window.location.href=path
-        }
-        function dispatchDetail(path){
         window.location.href=path
         }
         function dispatchDelete(path){
