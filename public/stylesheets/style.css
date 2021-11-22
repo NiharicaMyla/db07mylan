@@ -16,3 +16,8 @@ a {
     color: #ff00c8;
     font-family: italic "italic";
   }
+
+  .btn {
+    width:100px;
+    padding:5px;
+}
